@@ -3,24 +3,16 @@ const player = (name, marker) => {
     return {name, marker};
 }
 
+let playerOne = player('tristan', 'x');
+let playerTwo = player('andrew', 'o');
+
 // gameBoard module:
 const gameBoard = (() => {
 
     const board = ['', '', '', '', '', '', '', '', ''];
     const items = document.querySelectorAll('.item');
     const itemArr = [...items];
-    let playerOne = player('jake', 'x');
-    let playerTwo = player('andrew', 'o');
     let currentPlayer = playerOne.marker;
-
-
-    const changeTurn = () => {
-        if (currentPlayer == playerOne.marker) {
-            currentPlayer = playerTwo.marker;
-        } else {
-            currentPlayer = playerOne.marker
-        }
-    }
 
     const displayBoard = () => {
 
@@ -31,24 +23,32 @@ const gameBoard = (() => {
                 item.innerHTML = currentPlayer;
                 board.splice(index, 1, currentPlayer);
                 changeTurn();
-            })
+            }, { once: true});
         });
+    };
+
+
+
+    const changeTurn = () => {
+        if (currentPlayer == playerOne.marker) {
+            currentPlayer = playerTwo.marker;
+        } else {
+            currentPlayer = playerOne.marker
+        }
     };
 
     return {
         displayBoard,
         board,
-        playerOne,
-        playerTwo,
-        currentPlayer,
+        currentPlayer
     };
 })();
 
-gameBoard.displayBoard();
 
 // displayController Module:
 const displayController = (() => {
 
+    gameBoard.displayBoard();
+
 
 })();
-
