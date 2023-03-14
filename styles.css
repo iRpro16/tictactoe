@@ -23,6 +23,7 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -43,5 +44,16 @@ body {
 .item {
     background-color: white;
     font-size: 10em;
+    text-align: center;
+}
+
+.display {
+    width: 500px;
+    height: 100px;
+}
+
+.winner-declare {
+    width: 100%;
+    height: 50%;
     text-align: center;
 }
