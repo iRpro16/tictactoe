@@ -10,25 +10,26 @@
 </head>
 <body>
 
-    <header class="header"></header>
+    <header class="header">
+        <h1>Tic-Tac-Toe</h1>
+    </header>
 
     <div class="player-names">
         
-        <form id="form">
-
+        <div id="form">
             <label for="player-one">Player One</label>
-            <input type="text" name="player-one" class="playerOne">
+            <input type="text" name="player-one" id="player-one">
             <label for="player-two">Player Two</label>
-            <input type="text" name="player-two" class="playerTwo">
-            <button id="name-button" type="button">Click here</button>
-        </form>
+            <input type="text" name="player-two" id="player-two">
+            <input type="submit" value="submit" class="submit">
+        </div>
+
+        <button class="restart">Restart</button>
     </div>
 
     <div class="container">
         <div class="display">
-            <div class="winner-declare">
-                <button class="restart">Restart</button>
-            </div>
+            <div class="winner-declare"></div>
         </div>
         <div class="tic-grid">
             <div class="item"></div>
